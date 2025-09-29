@@ -8,12 +8,12 @@ namespace FormasGeometricasJordi
 {
     public class Rectangulo : Poligono
     {
-        // Solo Rectangulo (y Cuadrado por herencia) tienen estas propiedades
-        public double Altura { get; set; }
         public double Ancho { get; set; }
+        public double Altura { get; set; }
 
         public Rectangulo(double ancho, double altura)
         {
+            // Inicializa la propiedad heredada de Poligono
             NumeroLados = 4;
             Ancho = ancho;
             Altura = altura;

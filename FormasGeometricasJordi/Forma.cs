@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    public class Forma
+    public abstract class Forma
     {
-        public override string ToString()
+        // Método abstracto: Obliga a todas las clases derivadas (Poligono, Elipse) a implementarlo.
+        public abstract double CalcularArea();
+
+        // Método virtual: Permite que las clases derivadas (Rectangulo, Circulo) lo modifiquen.
+        public virtual void Dibujar()
         {
-            return "Aun no es una forma concreta";
+            Console.WriteLine("Dibujando una forma geométrica genérica.");
         }
     }
 }
