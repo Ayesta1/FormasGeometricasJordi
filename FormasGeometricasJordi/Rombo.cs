@@ -8,11 +8,19 @@ namespace FormasGeometricasJordi
 {
     public class Rombo : Poligono
     {
-        public Rombo(int altura, int ancho, int numeroLados) : base(altura, ancho, numeroLados) { }
+        public double DiagonalMayor { get; set; }
+        public double DiagonalMenor { get; set; }
 
-        public override string ToString()
+        public Rombo(double dMayor, double dMenor)
         {
-            return "Esto ya es un rombo";
+            NumeroLados = 4;
+            DiagonalMayor = dMayor;
+            DiagonalMenor = dMenor;
+        }
+
+        public override double CalcularArea()
+        {
+            return (DiagonalMayor * DiagonalMenor) / 2;
         }
     }
 }

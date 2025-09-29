@@ -8,11 +8,19 @@ namespace FormasGeometricasJordi
 {
     public class Triangulo : Poligono
     {
-        public Triangulo(int altura, int ancho, int numeroLados) : base(altura, ancho, numeroLados) { }
+        public double Base { get; set; }
+        public double Altura { get; set; }
 
-        public override string ToString()
+        public Triangulo(double b, double a)
         {
-            return "Esto ya es un triangulo";
+            NumeroLados = 3;
+            Base = b;
+            Altura = a;
+        }
+
+        public override double CalcularArea()
+        {
+            return (Base * Altura) / 2;
         }
     }
 }
