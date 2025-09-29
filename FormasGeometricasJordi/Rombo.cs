@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    internal class Rombo : Poligono
+    public class Rombo : Poligono
     {
         public Rombo(int altura, int ancho, int numeroLados) : base(altura, ancho, numeroLados) { }
 

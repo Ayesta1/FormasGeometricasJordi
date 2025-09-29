@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    internal class Cuadrado : Rectangulo
+    public class Cuadrado : Rectangulo
     {
     }
 }

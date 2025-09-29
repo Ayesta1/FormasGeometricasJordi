@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    internal class Circulo : Elipse
+    public class Circulo : Elipse
     {
     }
 }

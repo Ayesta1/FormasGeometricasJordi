@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    internal class Rectangulo : Poligono
+    public class Rectangulo : Poligono
     {
-        public Rectangulo(int altura, int ancho, int numeroLados) : base(altura, ancho, numeroLados) { }
+        // Solo Rectangulo (y Cuadrado por herencia) tienen estas propiedades
+        public double Altura { get; set; }
+        public double Ancho { get; set; }
 
-        public override string ToString()
+        public Rectangulo(double ancho, double altura)
         {
-            return "Esto ya es un Rectangulo";
+            NumeroLados = 4;
+            Ancho = ancho;
+            Altura = altura;
+        }
+
+        public override double CalcularArea()
+        {
+            return Ancho * Altura;
         }
     }
 }

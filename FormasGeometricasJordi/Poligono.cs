@@ -6,21 +6,11 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    internal class Poligono : Forma
+    public abstract class Poligono : Forma
     {
-        public int altura;
-        public int ancho;
-        public int numeroLados;
-        public Poligono(int ancho, int altura, int numeroLados) 
-        {
-            this.altura = altura; 
-            this.ancho = ancho;
-            this.numeroLados = numeroLados;
-        }
+        public int NumeroLados { get; protected set; }
 
-        public override string ToString()
-        {
-            return "Esto ya es un poligono";
-        }
+        // El método de cálculo sigue siendo abstracto y se implementa abajo
+        public abstract override double CalcularArea();
     }
 }

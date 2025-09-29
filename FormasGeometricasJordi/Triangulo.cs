@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    internal class Triangulo : Poligono
+    public class Triangulo : Poligono
     {
         public Triangulo(int altura, int ancho, int numeroLados) : base(altura, ancho, numeroLados) { }
 

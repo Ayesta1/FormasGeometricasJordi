@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FormasGeometricasJordi
 {
-    internal class Program
+    public class Program
     {
         /* Añadir los atributos y métodos que veamos adecuados.Por ejemplo, Rectángulo
         debe tener una base y una altura, además de un método para calcular el área y otro
