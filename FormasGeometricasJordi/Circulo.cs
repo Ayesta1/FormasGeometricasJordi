@@ -15,5 +15,9 @@ namespace FormasGeometricasJordi
         {
             
         }
+        public override void Dibujar()
+        {
+            Console.WriteLine($"Dibujando un polígono de forma geométrica genérica heredada de Elipse.");
+        }
     }
 }

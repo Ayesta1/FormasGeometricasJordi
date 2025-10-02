@@ -68,7 +68,11 @@ namespace FormasGeometricasJordi
                 }
                 else if (forma is Rombo romb)
                 {
-                    Console.WriteLine($"");
+                    Console.WriteLine($"  -> Diagonal Mayor: {romb.DiagonalMayor} y Diagonal Menor: {romb.DiagonalMenor} ");
+                }
+                else if (forma is Elipse elip)
+                {
+                    Console.WriteLine($"  -> Eje Mayor: {elip.EjeMayor} y Eje Menor: {elip.EjeMenor} ");
                 }
             }
 

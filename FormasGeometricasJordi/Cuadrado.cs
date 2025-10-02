@@ -13,5 +13,9 @@ namespace FormasGeometricasJordi
         {
             
         }
+        public override void Dibujar()
+        {
+            Console.WriteLine($"Dibujando un polígono de {NumeroLados} lados heredado de rectangulo.");
+        }
     }
 }

@@ -66,6 +66,9 @@ namespace FormasGeometricasJordi
             Console.WriteLine("R: Rectángulo");
             Console.WriteLine("O: Círculo");
             Console.WriteLine("T: Triángulo");
+            Console.WriteLine("C: Cuadrado");
+            Console.WriteLine("D: Rombo");
+            Console.WriteLine("U: Elipse");
             Console.Write("Ingrese la letra de la forma: ");
             string tipo = Console.ReadLine().ToUpper();
 
@@ -109,7 +112,7 @@ namespace FormasGeometricasJordi
                         int diagonalMe = int.Parse(Console.ReadLine());
                         nuevaForma = new Rombo(diagonalMa, diagonalMe);
                         break;
-                    case "":
+                    case "U":
                         Console.WriteLine("Ingrese Eje Mayor: ");
                         int ejeMayor = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese Eje Menor: ");
