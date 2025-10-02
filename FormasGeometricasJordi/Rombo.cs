@@ -11,9 +11,8 @@ namespace FormasGeometricasJordi
         public double DiagonalMayor { get; set; }
         public double DiagonalMenor { get; set; }
 
-        public Rombo(double dMayor, double dMenor)
+        public Rombo(double dMayor, double dMenor) : base(4)
         {
-            NumeroLados = 4;
             DiagonalMayor = dMayor;
             DiagonalMenor = dMenor;
         }

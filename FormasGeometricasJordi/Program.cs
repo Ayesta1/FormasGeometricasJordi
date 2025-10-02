@@ -12,12 +12,8 @@ namespace FormasGeometricasJordi
     using System;
     using System.Collections.Generic;
 
-    // Supongamos que todas tus clases (Forma, Rectangulo, Circulo, etc.)
-    // están definidas en el mismo namespace o archivo.
-
     public class Program
     {
-        // Una lista para almacenar todas las figuras creadas
         private static List<Forma> Formas = new List<Forma>();
 
         public static void Main(string[] args)
@@ -28,14 +24,14 @@ namespace FormasGeometricasJordi
                 MostrarMenu();
                 string opcion = Console.ReadLine();
 
-                // Usamos un switch para manejar las opciones del menú
                 switch (opcion.ToLower())
                 {
                     case "1":
                         CrearNuevaForma();
                         break;
                     case "2":
-                        MostrarCalculos();
+                        Diagrama miDiagrama = new Diagrama(Formas);
+                        miDiagrama.MostrarCalculos();
                         break;
                     case "3":
                         Console.WriteLine("¡Gracias por usar el programa de figuras geométricas! Adiós.");
@@ -49,8 +45,6 @@ namespace FormasGeometricasJordi
                 Console.ReadLine();
             }
         }
-
-        // --- Métodos del Menú ---
 
         private static void MostrarMenu()
         {
@@ -70,7 +64,7 @@ namespace FormasGeometricasJordi
             Console.Clear();
             Console.WriteLine("--- ¿Qué forma desea crear? ---");
             Console.WriteLine("R: Rectángulo");
-            Console.WriteLine("C: Círculo");
+            Console.WriteLine("O: Círculo");
             Console.WriteLine("T: Triángulo");
             Console.Write("Ingrese la letra de la forma: ");
             string tipo = Console.ReadLine().ToUpper();
@@ -83,28 +77,47 @@ namespace FormasGeometricasJordi
                 {
                     case "R":
                         Console.Write("Ingrese Ancho: ");
-                        double ancho = double.Parse(Console.ReadLine());
+                        int ancho = int.Parse(Console.ReadLine());
                         Console.Write("Ingrese Altura: ");
-                        double altura = double.Parse(Console.ReadLine());
-                        nuevaForma = new Rectangulo(ancho, altura);
+                        int alto = int.Parse(Console.ReadLine());
+                        nuevaForma = new Rectangulo(ancho, alto);
                         break;
 
-                    case "C":
+                    case "O":
                         Console.Write("Ingrese Radio: ");
-                        double radio = double.Parse(Console.ReadLine());
+                        int radio = int.Parse(Console.ReadLine());
                         nuevaForma = new Circulo(radio);
                         break;
 
                     case "T":
                         Console.Write("Ingrese Base: ");
-                        double baseT = double.Parse(Console.ReadLine());
+                        int baseT = int.Parse(Console.ReadLine());
                         Console.Write("Ingrese Altura: ");
-                        double alturaT = double.Parse(Console.ReadLine());
+                        int alturaT = int.Parse(Console.ReadLine());
                         nuevaForma = new Triangulo(baseT, alturaT);
                         break;
 
-                    // Puedes agregar Rombo y Cuadrado aquí
-                    // case "S": nuevaForma = new Cuadrado(...); break; 
+                    case "C":
+                        Console.WriteLine("Ingrese Base: ");
+                        int lado = int.Parse(Console.ReadLine());
+                        nuevaForma = new Cuadrado(lado);
+                        break;
+                    case "D":
+                        Console.WriteLine("Ingrese Diagonal Mayor: ");
+                        int diagonalMa = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Ingrese Diagonal Menor: ");
+                        int diagonalMe = int.Parse(Console.ReadLine());
+                        nuevaForma = new Rombo(diagonalMa, diagonalMe);
+                        break;
+                    case "":
+                        Console.WriteLine("Ingrese Eje Mayor: ");
+                        int ejeMayor = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Ingrese Eje Menor: ");
+                        int ejeMenor = int.Parse(Console.ReadLine());
+                        nuevaForma = new Elipse(ejeMayor, ejeMenor);
+                        break;
+
+
 
                     default:
                         Console.WriteLine("Tipo de forma no reconocido.");
@@ -125,45 +138,6 @@ namespace FormasGeometricasJordi
             {
                 Console.WriteLine($"\nOcurrió un error inesperado: {ex.Message}");
             }
-        }
-
-        private static void MostrarCalculos()
-        {
-            Console.Clear();
-            if (Formas.Count == 0)
-            {
-                Console.WriteLine("Aún no hay figuras creadas.");
-                return;
-            }
-
-            Console.WriteLine("--- Listado de Formas y Cálculos ---");
-            double areaTotal = 0;
-
-            foreach (var forma in Formas)
-            {
-                // Gracias al polimorfismo, llama al método CalcularArea() específico de cada clase (Rectangulo, Circulo, etc.)
-                double area = forma.CalcularArea();
-                areaTotal += area;
-
-                // GetType().Name obtiene el nombre de la clase real (ej: "Rectangulo")
-                Console.WriteLine($"\nTipo: {forma.GetType().Name}");
-                forma.Dibujar(); // Llama al método Dibujar() especializado
-                Console.WriteLine($"Área Calculada: {area:F2}"); // :F2 para dos decimales
-
-                // Puedes agregar información específica usando 'as' o 'is'
-                if (forma is Rectangulo rect)
-                {
-                    Console.WriteLine($"  -> Dimensiones: {rect.Ancho} x {rect.Altura}");
-                }
-                else if (forma is Circulo circulo)
-                {
-                    Console.WriteLine($"  -> Radio: {circulo.Radio}");
-                }
-            }
-
-            Console.WriteLine("\n-------------------------------------");
-            Console.WriteLine($"ÁREA TOTAL DE TODAS LAS FORMAS: {areaTotal:F2}");
-            Console.WriteLine("-------------------------------------");
         }
     }
 }

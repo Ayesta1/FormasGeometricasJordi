@@ -8,18 +8,20 @@ namespace FormasGeometricasJordi
 {
     public class Elipse : Forma
     {
-        protected double EjeMayor { get; set; }
-        protected double EjeMenor { get; set; }
+        protected int ejeMayor;
+        protected int ejeMenor;
+        public int EjeMayor { get => ejeMayor; set => ejeMayor = value; }
+        public int EjeMenor { get => ejeMenor; set => ejeMenor = value; }
 
-        public Elipse(double mayor, double menor)
+        public Elipse(int ejeMayor, int ejeMenor)
         {
-            EjeMayor = mayor;
-            EjeMenor = menor;
+            this.ejeMayor = ejeMayor;
+            this.ejeMenor = ejeMenor;
         }
 
-        public override double CalcularArea()
+        public override double  CalcularArea()
         {
-            return Math.PI * EjeMayor * EjeMenor;
+            return ejeMayor * ejeMenor * Math.PI;
         }
     }
 }

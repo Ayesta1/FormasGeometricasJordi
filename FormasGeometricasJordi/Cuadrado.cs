@@ -8,10 +8,10 @@ namespace FormasGeometricasJordi
 {
     public class Cuadrado : Rectangulo
     {
-        // El constructor de Cuadrado solo necesita 'lado', pero llama al de Rectangulo.
-        public Cuadrado(double lado) : base(lado, lado)
+        public int Lado { get { return this.ancho; } }
+        public Cuadrado(int lado) : base(lado, lado)
         {
-            // No necesita redefinir Ancho, Altura o CalcularArea.
+            
         }
     }
 }

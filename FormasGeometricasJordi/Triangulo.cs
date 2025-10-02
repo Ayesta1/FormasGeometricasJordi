@@ -11,9 +11,8 @@ namespace FormasGeometricasJordi
         public double Base { get; set; }
         public double Altura { get; set; }
 
-        public Triangulo(double b, double a)
+        public Triangulo(double b, double a) : base(3)
         {
-            NumeroLados = 3;
             Base = b;
             Altura = a;
         }

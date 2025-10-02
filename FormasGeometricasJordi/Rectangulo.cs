@@ -8,20 +8,20 @@ namespace FormasGeometricasJordi
 {
     public class Rectangulo : Poligono
     {
-        public double Ancho { get; set; }
-        public double Altura { get; set; }
+        protected int ancho;
+        protected int alto;
+        public int Ancho { get => ancho; set => ancho = value; }
+        public int Alto { get => alto; set => alto = value; }
 
-        public Rectangulo(double ancho, double altura)
+        public Rectangulo(int ancho, int alto) : base(4)
         {
-            // Inicializa la propiedad heredada de Poligono
-            NumeroLados = 4;
-            Ancho = ancho;
-            Altura = altura;
+            this.ancho = ancho;
+            this.alto = alto;
         }
 
         public override double CalcularArea()
         {
-            return Ancho * Altura;
+            return Ancho * Alto;
         }
     }
 }
