@@ -101,29 +101,26 @@ namespace FormasGeometricasJordi
                         break;
 
                     case "C":
-                        Console.WriteLine("Ingrese Base: ");
+                        Console.Write("Ingrese Base: ");
                         int lado = int.Parse(Console.ReadLine());
                         nuevaForma = new Cuadrado(lado);
                         break;
                     case "D":
-                        Console.WriteLine("Ingrese Diagonal Mayor: ");
+                        Console.Write("Ingrese Diagonal Mayor: ");
                         int diagonalMa = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Ingrese Diagonal Menor: ");
+                        Console.Write("Ingrese Diagonal Menor: ");
                         int diagonalMe = int.Parse(Console.ReadLine());
                         nuevaForma = new Rombo(diagonalMa, diagonalMe);
                         break;
                     case "U":
-                        Console.WriteLine("Ingrese Eje Mayor: ");
+                        Console.Write("Ingrese Eje Mayor: ");
                         int ejeMayor = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Ingrese Eje Menor: ");
+                        Console.Write("Ingrese Eje Menor: ");
                         int ejeMenor = int.Parse(Console.ReadLine());
                         nuevaForma = new Elipse(ejeMayor, ejeMenor);
                         break;
-
-
-
                     default:
-                        Console.WriteLine("Tipo de forma no reconocido.");
+                        Console.Write("Tipo de forma no reconocido.");
                         return;
                 }
 
